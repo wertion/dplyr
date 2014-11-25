@@ -13,7 +13,6 @@ install:
   - ./travis-tool.sh r_binary_install knitr
   - ./travis-tool.sh install_github hadley/lazyeval
   - if [ "$RCPP" = "release" ]; then ./travis-tool.sh r_binary_install Rcpp; fi
-  - if [ "$RCPP" = "devel" ]; then cd ..; git clone https://github.com/RcppCore/Rcpp.git; R CMD INSTALL Rcpp; cd -; fi
   - ./travis-tool.sh install_deps
 
 before_script:
@@ -40,4 +39,4 @@ notifications:
     on_failure: change
 env:
   - RCPP=release PKG_CXXFLAGS="-g -O3 -Wall -pedantic"
-  - RCPP=devel PKG_CXXFLAGS="-g -O3 -Wall -pedantic"
+
