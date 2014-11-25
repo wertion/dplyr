@@ -1,4 +1,4 @@
-language: c
+language: objective-c
 services: PostgreSQL
 
 before_install:
